@@ -11,8 +11,8 @@ Sistema de monitoramento do nível de luminosidade do ambiente.
 
 ## Índice
 - <a href="#funcionalidades">Funcionalidades</a>
-- <a href="#materiais">Materiais</a>
 - <a href="#simulação">Simulação</a>
+- <a href="#materiais">Materiais</a>
 - <a href="#rodar">Como reproduzi-lo</a>
 - <a href="#video">Vídeo do projeto</a>
 
@@ -42,7 +42,7 @@ O sistema é capaz de indicar o estado do ambiente de acordo com os seguintes cr
     <li> 1 resistor de 200Ω
 </ol>
 
-## Como reproduzi-lo?
+## Como reproduzi-lo
 
 <strong>1- Instale o programa Arduino IDE 
 * [Link para download](https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE) 👈
