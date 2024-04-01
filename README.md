@@ -14,6 +14,7 @@ Sistema de monitoramento do nível de luminosidade do ambiente.
 - <a href="#materiais">Materiais</a>
 - <a href="#simulação">Simulação</a>
 - <a href="#rodar">Como reproduzi-lo</a>
+- <a href="#video">Vídeo do projeto</a>
 
 ## Funcionalidades
 
@@ -131,6 +132,9 @@ void loop(){
 
 <strong>7- Por fim, aguarde a compilação e envio do programa, depois abra o monitor serial para acompanhar o processo de leitura e ajuste os valores do código com base nesses valores.
 <img src="arduino.ide.png">
+
+## Vídeo do projeto
+* [Link para o vídeo](https://youtu.be/z8XVtikej6I) 👈
 
 <strong>
 
