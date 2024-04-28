@@ -9,8 +9,8 @@
 
 ## Índice
 - <a href="#simulação">Simulação</a>
-- <a href="#hardware">Hardware Necessário</a>
-- <a href="#bibliotecas">Bibliotecas Necessárias</a>
+- <a href="#hardware necessário">Hardware Necessário</a>
+- <a href="#bibliotecas necessárias">Bibliotecas Necessárias</a>
 - <a href="#instalação">Instalação</a>
 - <a href="#uso">Como usar</a>
 - <a href="#faq">FAQ</a>
