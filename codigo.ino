@@ -356,7 +356,7 @@ void loop() {
   //Checando as Medidas e acendendo o LED correspondente
   if(light > lightAlert or humidity < humAlert or temperature > tempAlert) {
     digitalWrite(redLED, HIGH);
-    beepingTime = 500; //Buzina tocará mais rapidamente no LED Vermelho
+    beepingTime = 700; //Buzina tocará mais rapidamente no LED Vermelho
   }
   else if(light > lightWarning && light < lightAlert or humidity > humAlert && humidity < humWarning or temperature < tempAlert && temperature > tempWarning) {
     digitalWrite(yellowLED, HIGH);
