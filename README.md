@@ -1,153 +1,72 @@
-# CHECKPOINT 1 EDGE COMPUTING - O CASO DA VINHERIA AGNELLO
+# Monitoramento Ambiental com Arduino
+
 ## Grupo:
 * Glauco Heitor Gonçalves e Silva
 * Lucas Himeno do Carmo
 * Victor Hugo de Paula
 * Otavio Santos de Lima Ferrao
-
-## Descrição: 
-Sistema de monitoramento do nível de luminosidade do ambiente.
-<body>
-
-## Índice
-- <a href="#funcionalidades">Funcionalidades</a>
-- <a href="#simulação">Simulação</a>
-- <a href="#materiais">Materiais</a>
-- <a href="#rodar">Como reproduzi-lo</a>
-- <a href="#video">Vídeo do projeto</a>
-
-## Funcionalidades
-
-O sistema é capaz de indicar o estado do ambiente de acordo com os seguintes critérios de luminosidade:
-* Verde: Quando a luminosidade está dentro dos parâmetros adequados, o LED verde é acionado, indicando que não há comprometimento da qualidade do vinho.
-* Amarelo: Se a luminosidade excede um limite pré-estabelecido, o LED amarelo é acionado, indicando um nível de alerta e possível risco para o produto.
-* Vermelho: Em caso de luminosidade excessiva, o LED vermelho é ativado e um aviso sonoro é emitido até que as condições ideais de armazenamento do vinho sejam restauradas.
-
-## Simulação
-* [Link da simulação](https://www.tinkercad.com/things/0eyZXIMSn9e-checkpoint-1-edge) 👈
+* Gabriel Guilherme Leste
 
 
-## Materiais 
-</ol>
-    <li> 1 placa de ensaio
-    <li> 1 cabo USB 2.0 A/B
-    <li> Cabos jumper macho/macho
-    <li> 1 LED difuso vermelho
-    <li> 1 LED difuso verde
-    <li> 1 LED difuso amarelo
-    <li> 1 piezo buzzer 5V
-    <li> 3 resistores de 100Ω
-    <li> 1 fotoresistor LDR
-    <li> 1 arduino UNO R3
-    <li> 1 resistor de 200Ω
+## Hardware Necessário
+
+<ol>
+<li>Arduino Uno (ou similar)</li>
+<li>Sensor de temperatura e umidade DHT22 (ou DHT11)</li>
+<li>Sensor de luminosidade</li>
+<li>Display LCD 16x2</li>
+<li>LEDs (vermelho, amarelo, verde)</li>
+<li>Buzzer</li>
+<li>Resistores e fios de conexão</li>
 </ol>
 
-## Como reproduzi-lo
+## Bibliotecas Necessárias
 
-<strong>1- Instale o programa Arduino IDE 
-* [Link para download](https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE) 👈
+- DHT (para o sensor DHT22)
+- LiquidCrystal (para o display LCD)
 
-<hr>
+## Instalação
 
-<strong>2- Selecione os materiais e conecte-os na placa de ensaio da mesma forma que a imagem abaixo: <strong>
+1. Conecte os componentes conforme o esquema de ligação fornecido.
+2. Faça o upload do código para o Arduino.
+3. Certifique-se de instalar as bibliotecas necessárias.
 
-<img src="print.adr.png">
+## Como Usar
 
-<hr>
+1. O Arduino começará a ler as informações ambientais assim que for ligado.
+2. O display LCD mostrará a temperatura, umidade e luminosidade em tempo real.
+3. LEDs e o buzzer serão acionados caso alguma das condições ambientais ultrapasse os limites definidos.
+4. O código pode ser personalizado para ajustar os valores de alerta e aviso conforme necessário.
 
-<strong>3- Conecte o cabo USB 2.0 A/B no arduino e o USB no computador/notebook. Um LED acenderá, informando que o arduino está ligado.
+## Contribuição
 
-<hr>
+Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas ou enviar solicitações de pull.
 
-<strong>4- Entre no programa, clique em ferramentas, selecione o tipo de arduino e veja se o computador o reconheceu, logo abaixo em porta.
-<img src="board.arduino.png">
+## Agradecimentos
 
-<strong>5- Crie um novo arquivo e cole o código:
+Agradecemos ao professor Cabrini pelo suporte e orientação.
 
-```
-// Identificação das portas
-int ledVerde = 3;    // Pino do LED verde
-int ledAmarelo = 4;   // Pino do LED amarelo
-int ledVermelho = 2;  // Pino do LED vermelho
-int buzzer = 5;     // Pino do buzzer
-int LDR = A0;     // Pino do sensor LDR (sensor de luminosidade)
+## FAQ
 
-int analogValue;    // Variável para armazenar o valor lido do sensor LDR
+### P: Posso usar outro tipo de sensor de temperatura?
+R: Sim, você pode modificar o código para usar outros sensores compatíveis com o Arduino.
 
-bool apitando = false;
+### P: Como posso ajustar os limites de alerta?
+R: Você pode alterar os valores das variáveis `lightAlert`, `humAlert` e `tempAlert` no código para ajustar os valores de alerta conforme necessário.
 
-// Configurações iniciais
-void setup() {
-  pinMode(ledVerde,OUTPUT);   // Define o pino do LED verde como saída
-  pinMode(ledAmarelo,OUTPUT); // Define o pino do LED amarelo como saída
-  pinMode(ledVermelho,OUTPUT);  // Define o pino do LED vermelho como saída
-  pinMode(LDR, INPUT);      // Define o pino do sensor LDR como entrada
-  pinMode(buzzer,OUTPUT);   // Define o pino do buzzer como saída
+### P: Qual foi o método de leitura dos sensores utilizado?
+R: Utilizamos uma média móvel de 10 leituras para evitar picos aleatórios e suavizar as variações entre as leituras.
 
-  Serial.begin(9600);     // Inicializa a comunicação serial com taxa de transferência de 9600 bps
-  
-  digitalWrite(buzzer, HIGH); // Desliga o buzzer no início do programa
-}
+## Suporte
 
-// Verificação do nível de luminosidade
-void loop(){
-  int temporario[10];     // Array temporário para armazenar valores de leitura do sensor LDR
-  int soma = 0;         // Variável para armazenar a soma dos valores lidos do sensor LDR
-  // Realiza 10 leituras do sensor LDR e soma os valores lidos
-  for(int i = 0; i < 10; i++) {
-    analogValue = analogRead(LDR);  // Realiza a leitura do sensor LDR
-    soma += map(analogValue, 200, 1023, 0, 100); // Mapeia o valor lido para o intervalo de 0 a 100 e adiciona à soma  
-  }
+Se você tiver dúvidas ou encontrar problemas, entre em contato através do email gabrielgleste@gmail.com.
 
-  int intensidade = soma / 10;    // Calcula a média das 10 leituras, representando a intensidade de luminosidade
-  
- 
-  Serial.println(intensidade);    // Imprime a intensidade de luminosidade no monitor serial
-  
-  // Verifica a intensidade de luminosidade e ativa os LEDs e o buzzer de acordo com a necessidade
-  if(intensidade < 40){  // Se a intensidade for menor que 60 (Baixa luminosidade - Ambiente adequado)
-    digitalWrite(ledVerde, HIGH); // Acende o LED verde
-    apitando = false;
-  }
-  else if(intensidade >= 40 && intensidade <= 80){  // Se a intensidade estiver entre 60 e 90 (Luminosidade em nível de alerta)
-    digitalWrite(ledAmarelo, HIGH); // Acende o LED amarelo
-    apitando = false;
-  }
-  else{   // Se a intensidade for maior que 90 (Alta luminosidade - Indicação de que há um problema)
-    digitalWrite(ledVermelho, HIGH);// Acende o LED vermelho
-    apitando = true;    // Liga o buzzer para indicar o problema
-  }
+## Roadmap
 
-  if (apitando == true) {
-    for (int i=1; i<3; i++) {
-    digitalWrite(buzzer, LOW);
-    delay(200);
-    digitalWrite(buzzer, HIGH);
-    delay(200);
-    }
-  }
-  
-  delay(3000);
-  digitalWrite(ledVerde, LOW);  // Aguarda 3 segundos antes de reiniciar o loop
-  // Desliga todos os LEDs e o buzzer antes de reiniciar o loop
-  digitalWrite(ledAmarelo, LOW);
-  digitalWrite(ledVermelho, LOW);
-  digitalWrite(buzzer, HIGH);
-}
-```
+- Adicionar suporte para outros tipos de sensores de temperatura e umidade.
+- Implementar uma interface de usuário mais interativa.
+- Expandir os recursos de monitoramento para incluir mais parâmetros ambientais.
 
-<hr>
+## Histórico de Versões
 
-<strong>6- Após colado, clique na seta para enviar o código.
-
-<hr>
-
-<strong>7- Por fim, aguarde a compilação e envio do programa, depois abra o monitor serial para acompanhar o processo de leitura e ajuste os valores do código com base nesses valores.
-<img src="arduino.ide.png">
-
-## Vídeo do projeto
-* [Link para o vídeo](https://youtu.be/z8XVtikej6I) 👈
-
-<strong>
-
-</body>
+- **v2.0.0** (28/04/2024): Segunda versão do projeto.
