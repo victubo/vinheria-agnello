@@ -9,8 +9,8 @@
 
 ## Índice
 - <a href="#simulação">Simulação</a>
-- <a href="#hardware necessário">Hardware Necessário</a>
-- <a href="#bibliotecas necessárias">Bibliotecas Necessárias</a>
+- <a href="#hardware">Hardware Necessário</a>
+- <a href="#biblioteca">Bibliotecas Necessárias</a>
 - <a href="#instalação">Instalação</a>
 - <a href="#uso">Como usar</a>
 - <a href="#faq">FAQ</a>
@@ -21,7 +21,7 @@
 ## Simulação
 [Link da simulação](https://wokwi.com/projects/396455342081662977) 👈
 
-## Hardware Necessário
+<a id="hardware">## Hardware Necessário</a>
 
 <ol>
 <li>Arduino Uno (ou similar)</li>
@@ -33,7 +33,7 @@
 <li>Resistores e fios de conexão</li>
 </ol>
 
-## Bibliotecas Necessárias
+<a id="biblioteca">## Bibliotecas Necessárias</a>
 
 - DHT (para o sensor DHT22)
 - LiquidCrystal (para o display LCD)
