@@ -21,7 +21,7 @@
 ## Simulação
 [Link da simulação](https://wokwi.com/projects/396455342081662977) 👈
 
-<a id="hardware">## Hardware Necessário</a>
+<h2 id="hardware">Hardware Necessário</h2>
 
 <ol>
 <li>Arduino Uno (ou similar)</li>
@@ -33,7 +33,7 @@
 <li>Resistores e fios de conexão</li>
 </ol>
 
-<a id="biblioteca">## Bibliotecas Necessárias</a>
+<h2 id="biblioteca">Bibliotecas Necessárias</h2>
 
 - DHT (para o sensor DHT22)
 - LiquidCrystal (para o display LCD)
