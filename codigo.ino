@@ -451,6 +451,7 @@ void loop() {
     if(digitalRead(greenLED) == HIGH && strlen(display_text) == 0) {
       strcpy(display_text, "Tudo OK                ");
       Serial.println("ok");
+      index = 0;
     }
 
     //if(strcmp(previous_text, display_text) != 0) { index=0;}
