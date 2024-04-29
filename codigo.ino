@@ -241,7 +241,7 @@ int quantidadeLeituras = 10;
 
 //Variáveis de String
 char upperline_text[16];
-char display_text[1000];
+char display_text[400];
 char current_display_text[16];
 int index = 0;
 
@@ -317,6 +317,16 @@ void setup() {
   delay(time);
   leituraLDR = analogRead(portLDR);
   light = map(leituraLDR, 0, 1023, 100, 0);
+
+    //Criando os icones
+    lcd.createChar(0, temp1);
+    lcd.createChar(1, temp2);
+    lcd.createChar(2, temp3);
+    lcd.createChar(3, umidade1);
+    lcd.createChar(4, umidade2);
+    lcd.createChar(5, luz1);
+    lcd.createChar(6, luz2);
+    lcd.createChar(7, luz3);
 }
  
 void loop() {
@@ -356,11 +366,11 @@ void loop() {
   //Checando as Medidas e acendendo o LED correspondente
   if(light > lightAlert or humidity < humAlert or temperature > tempAlert) {
     digitalWrite(redLED, HIGH);
-    beepingTime = 700; //Buzina tocará mais rapidamente no LED Vermelho
+    beepingTime = 200; //Buzina tocará mais rapidamente no LED Vermelho
   }
   else if(light > lightWarning && light < lightAlert or humidity > humAlert && humidity < humWarning or temperature < tempAlert && temperature > tempWarning) {
     digitalWrite(yellowLED, HIGH);
-    beepingTime = 1500; //Buzina tocará mais lentamente no LED Amarelo
+    beepingTime = 1000; //Buzina tocará mais lentamente no LED Amarelo
   }
   else {
     digitalWrite(greenLED, HIGH);
@@ -371,7 +381,6 @@ void loop() {
     if(millis() - lastBeeping >= beepingTime) {
       digitalWrite(portBuzzer, !digitalRead(portBuzzer));
       lastBeeping = millis();
-      Serial.println("beeping");
     } else {
       digitalWrite(portBuzzer, LOW);
     }
@@ -383,15 +392,7 @@ void loop() {
     }
 
     lcd.clear();
-    //Criando os icones
-    lcd.createChar(0, temp1);
-    lcd.createChar(1, temp2);
-    lcd.createChar(2, temp3);
-    lcd.createChar(3, umidade1);
-    lcd.createChar(4, umidade2);
-    lcd.createChar(5, luz1);
-    lcd.createChar(6, luz2);
-    lcd.createChar(7, luz3);
+
     //Escrevendo a linha de cima
     lcd.setCursor(0,0);
     lcd.write(byte(0));
@@ -422,7 +423,7 @@ void loop() {
     }
 
 
-    char previous_text[1000];
+    char previous_text[400];
     strcpy(previous_text, display_text);
 
     strcpy(display_text, ""); //Limpando a segunda linha
