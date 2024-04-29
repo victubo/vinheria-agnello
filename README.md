@@ -2,7 +2,7 @@
 
 ## Grupo ARES
 
-![ARES-removebg-preview](https://github.com/victubo/vinheria-agnello/assets/136825566/b3b7ac4d-a8c7-4b0d-9a26-ed4503302d21)
+![ARES](https://github.com/victubo/vinheria-agnello/assets/136825566/03b8df2c-7d58-4404-bc24-f1048b46fa29)
 
 * Glauco Heitor Gonçalves e Silva
 * Lucas Himeno do Carmo
