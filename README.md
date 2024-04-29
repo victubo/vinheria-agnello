@@ -41,7 +41,7 @@ O sistema indica o estado do ambiente de acordo com os critérios de luminosidad
 
 <h2 id="simulacao">Simulação:</h2>
 
-* [Link da simulação](https://wokwi.com/projects/396449045934045185) 👈
+* [Link da simulação](https://wokwi.com/projects/396501086457414657) 👈
 
 <h2 id="hardware">Hardware necessário:</h2>
 
