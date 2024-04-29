@@ -1,6 +1,9 @@
 # Monitoramento Ambiental com Arduino
 
-## Grupo:
+## Grupo ARES
+
+![ARES](https://github.com/victubo/vinheria-agnello/assets/136825566/6f4b0147-0aa4-4277-a7e4-f6ae72630b47)
+
 * Glauco Heitor Gonçalves e Silva
 * Lucas Himeno do Carmo
 * Victor Hugo de Paula
