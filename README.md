@@ -25,14 +25,23 @@ Sistema de monitoramento dos níveis de luminosidade, temperatura e umidade do a
 
 <h2 id="funcionalidades">Funcionalidades:</h2>
 
-O sistema é capaz de indicar o estado do ambiente de acordo com os seguintes critérios de luminosidade, temperatura e umidade:
-* Verde: Quando todas estas medidas estão dentro dos parâmetros adequados, o LED verde é acionado, além da mensagem no display, indicando que tudo está OK. <br> <img src="status.ok.png">
-* Amarelo: Se alguma das medidas excede um limite pré-estabelecido, o LED amarelo é acionado, uma mensagem no display informa qual é o parâmetro comprometido e o buzzer realiza um som periódico para alertar os operadores do sistema de que algo está errado. <br> <img src="status.alert.gif">
-* Vermelho: Caso um ou mais parâmetros estejam em nível de alerta, o LED vermelho é ativado, uma mensagem no display informa qual o problema e o aviso sonoro é emitido com maior frequência até que as condições ideais sejam restauradas. <br> <img src="status.warning.gif">
+### Ícones:
+O display conta com ícones para indicar os parâmetros que estão sendo lidos.
+
+- O símbolo do termômetro representa a temperatura: <br> <img src="temperature.icon.png" width=141px height=auto>
+- O símbolo da lâmpada representa a luminosidade: <br> <img src="luminosity.icon.png" width=141px height=auto>
+- O símbolo da névoa representa a umidade: <br> <img src="humidity.icon.png" width=141px height=auto>
+
+### Níveis de alerta:
+
+O sistema indica o estado do ambiente de acordo com os critérios de luminosidade, temperatura e umidade:
+- Verde: Quando todas estas medidas estão dentro dos parâmetros adequados, o LED verde é acionado, além da mensagem no display, indicando que tudo está OK. <br> <img src="status.ok.png" width=546px height=170px>
+- Amarelo: Se alguma das medidas excede um limite pré-estabelecido, o LED amarelo é acionado, uma mensagem no display informa qual é o parâmetro comprometido e o buzzer realiza um som periódico para alertar os operadores do sistema de que algo está errado. <br> <img src="status.alert.gif" width=546px height=170px>
+- Vermelho: Caso um ou mais parâmetros estejam em nível de alerta, o LED vermelho é ativado, uma mensagem no display informa qual o problema e o aviso sonoro é emitido com maior frequência até que as condições ideais sejam restauradas. <br> <img src="status.warning.gif" width=546px height=170px>
 
 <h2 id="simulacao">Simulação:</h2>
 
-* [Link da simulação](https://wokwi.com/projects/396447665100950529) 👈
+* [Link da simulação](https://wokwi.com/projects/396449045934045185) 👈
 
 <h2 id="hardware">Hardware necessário:</h2>
 
@@ -55,7 +64,7 @@ O sistema é capaz de indicar o estado do ambiente de acordo com os seguintes cr
 
 <h2 id="reproduzir">Como reproduzir:</h2>
 
-### 1 - Instale o programa Arduino IDE
+#### 1 - Instale o programa Arduino IDE
 - [Link para download](https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE) 👈
 
 #### 2 - Conecte os componentes conforme o esquema abaixo: <strong>
@@ -75,11 +84,11 @@ O sistema é capaz de indicar o estado do ambiente de acordo com os seguintes cr
 
 <h2 id="contribuicao">Contribuição:</h2>
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas ou enviar solicitações de pull.
+Contribuições são bem-vindas! Sinta-se à vontade para informar problemas ou enviar solicitações de pull.
 
 <h2 id="agradecimentos">Agradecimentos:</h2>
 
-Agradecemos ao professor Cabrini pelo suporte e orientação.
+Agradecemos ao professor Fábio Cabrini pelo suporte e orientação.
 
 <h2 id="faq">FAQ:</h2>
 
